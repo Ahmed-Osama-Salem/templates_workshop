@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Satisfy&display=swap');
 @tailwind base;
 
+.theme-layout-container{
+  @apply h-[2000px] w-full bg-gray-light p-[30px]
+}
 
 
 @tailwind components;
+
+
 
 @tailwind utilities;
 
