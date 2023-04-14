@@ -10,22 +10,29 @@ const ImageHoverWrapper: React.FC<{
   const [isImageHoverd, setIsImageHoverd] = useState<boolean>(false);
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${props.image})`,
-        backgroundSize: 'cover',
-        backgroundPosition: `${
-          !isImageHoverd ? props.hoverFrom : props.hoverTo
-        }`,
-      }}
-      onMouseEnter={() => {
-        setIsImageHoverd(true);
-      }}
-      onMouseLeave={() => {
-        setIsImageHoverd(false);
-      }}
-      className={`${props.imageWidth} ${props.imageHeight} overflow-hidden bg-white shadow-sm shadow-gray-light-100/30 transition-all duration-[5000ms] ease-in-out`}
-    ></div>
+    <div className="flex w-full flex-col items-center gap-5">
+      <div
+        style={{
+          backgroundImage: `url(${props.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: `${
+            !isImageHoverd ? props.hoverFrom : props.hoverTo
+          }`,
+        }}
+        onMouseEnter={() => {
+          setIsImageHoverd(true);
+        }}
+        onMouseLeave={() => {
+          setIsImageHoverd(false);
+        }}
+        className={`${props.imageWidth} ${props.imageHeight} overflow-hidden bg-white shadow-sm shadow-gray-light-100/30 transition-all duration-[5000ms] ease-in-out`}
+      ></div>
+      <div>
+        <p className="font-Nanum-Myeongjo capitalize text-gray-mid-100">
+          main home
+        </p>
+      </div>
+    </div>
   );
 };
 

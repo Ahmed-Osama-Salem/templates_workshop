@@ -1,6 +1,5 @@
-import { imagesHoverd } from '@/source/db/images';
-
-import ImageHoverWrapper from '../elements/Images/ImageHoverWrapper';
+import LeftImageHoverd from '../modules/ImagesHoverd/LeftImageHoverd';
+import RightImageHoverd from '../modules/ImagesHoverd/RightImageHoverd';
 
 const OurWork = () => {
   return (
@@ -16,25 +15,9 @@ const OurWork = () => {
           you present every aspect of your business.
         </p>
       </div>
-      <div className="flex h-[1000px] w-full  p-[60px]">
-        <div className="flex w-[50%] flex-col items-center ">
-          <ImageHoverWrapper
-            image={imagesHoverd[0] as string}
-            imageWidth="w-[80%]"
-            imageHeight="h-[600px]"
-            hoverFrom="top"
-            hoverTo="bottom"
-          />
-        </div>
-        <div className="flex w-[50%] flex-col items-center ">
-          <ImageHoverWrapper
-            image={imagesHoverd[1] as string}
-            imageWidth="w-[80%]"
-            imageHeight="h-[325px]"
-            hoverFrom="left"
-            hoverTo="right"
-          />
-        </div>
+      <div className="flex h-auto w-full px-[80px] py-[60px]">
+        <LeftImageHoverd />
+        <RightImageHoverd />
       </div>
     </div>
   );
