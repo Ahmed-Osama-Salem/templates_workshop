@@ -1,12 +1,14 @@
+import { imagesHoverd } from '@/source/db/images';
+
 import ImageHoverWrapper from '../elements/Images/ImageHoverWrapper';
 
 const OurWork = () => {
   return (
-    <div className=" w-full text-center">
+    <div className=" w-full p-[30px] text-center">
       <h1 className="font-Nanum-Myeongjo text-5xl font-medium tracking-widest text-gray-mid">
         LOVELY HOMEPAGES
       </h1>
-      <div className="py-4 text-gray-light-100">
+      <div className="pt-4 text-gray-light-100">
         <p className="font-Satisfy ">
           Solene comes with 12 alluring homepages carefully created to help
         </p>
@@ -17,18 +19,18 @@ const OurWork = () => {
       <div className="flex h-[1000px] w-full  p-[60px]">
         <div className="flex w-[50%] flex-col items-center ">
           <ImageHoverWrapper
-            image="https://solene.qodeinteractive.com/wp-content/uploads/2020/01/home-1-1-768x2978.jpg"
-            imageWidth="w-[70%]"
-            imageHeight="h-[700px]"
+            image={imagesHoverd[0] as string}
+            imageWidth="w-[80%]"
+            imageHeight="h-[600px]"
             hoverFrom="top"
             hoverTo="bottom"
           />
         </div>
         <div className="flex w-[50%] flex-col items-center ">
           <ImageHoverWrapper
-            image="https://solene.qodeinteractive.com/wp-content/uploads/2020/01/home-2-1.jpg"
-            imageWidth="w-[73%]"
-            imageHeight="h-[340px]"
+            image={imagesHoverd[1] as string}
+            imageWidth="w-[80%]"
+            imageHeight="h-[325px]"
             hoverFrom="left"
             hoverTo="right"
           />
