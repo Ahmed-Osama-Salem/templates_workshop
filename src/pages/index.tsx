@@ -1,5 +1,6 @@
 import { Meta } from '@/component/layouts/Meta';
 import ThemeLayout from '@/component/layouts/ThemeLayout';
+import OurWork from '@/component/sections/OurWork';
 import { Main } from '@/component/templates/Main';
 
 const Index = () => {
@@ -13,11 +14,7 @@ const Index = () => {
       }
     >
       <ThemeLayout>
-        <h1 className="font-Nanum-Myeongjo text-4xl">LOVELY HOMEPAGES</h1>
-        <p className="font-Satisfy">
-          Solene comes with 12 alluring homepages carefully created to help you
-          present every aspect of your business.
-        </p>
+        <OurWork />
       </ThemeLayout>
     </Main>
   );
