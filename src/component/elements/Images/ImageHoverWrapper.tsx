@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const ImageHoverWrapper: React.FC<{
@@ -8,6 +9,7 @@ const ImageHoverWrapper: React.FC<{
   hoverTo: 'top' | 'bottom' | 'right' | 'left';
 }> = (props) => {
   const [isImageHoverd, setIsImageHoverd] = useState<boolean>(false);
+  const [isTextHoverd, setIsTextHoverd] = useState<boolean>(false);
 
   return (
     <div className="flex w-full flex-col items-center gap-5">
@@ -21,16 +23,50 @@ const ImageHoverWrapper: React.FC<{
         }}
         onMouseEnter={() => {
           setIsImageHoverd(true);
+          setIsTextHoverd(true);
         }}
         onMouseLeave={() => {
           setIsImageHoverd(false);
+          setIsTextHoverd(false);
         }}
         className={`${props.imageWidth} ${props.imageHeight} overflow-hidden bg-white shadow-sm shadow-gray-light-100/30 transition-all duration-[5000ms] ease-in-out`}
       ></div>
-      <div>
-        <p className="font-Nanum-Myeongjo capitalize text-gray-mid-100">
-          main home
-        </p>
+      <div
+        className={`w-full translate-y-0 opacity-100 transition-all duration-700 ease-linear`}
+        onMouseEnter={() => {
+          setIsTextHoverd(true);
+        }}
+        onMouseLeave={() => {
+          setIsTextHoverd(false);
+        }}
+      >
+        {!isTextHoverd ? (
+          <motion.div
+            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+          >
+            <p className=" font-Nanum-Myeongjo capitalize text-gray-mid-100 ">
+              main home
+            </p>
+          </motion.div>
+        ) : null}
+
+        {isTextHoverd ? (
+          <motion.div
+            animate={{ y: 0, opacity: 1 }}
+            initial={{ y: 10, opacity: 0 }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+            className="flex w-full justify-center gap-[30px]"
+          >
+            <p className="font-Nanum-Myeongjo capitalize text-gray-mid-100">
+              see all
+            </p>
+            <p className="font-Nanum-Myeongjo capitalize text-gray-mid-100">
+              view album
+            </p>
+          </motion.div>
+        ) : null}
       </div>
     </div>
   );
