@@ -22,6 +22,13 @@ module.exports = {
           mid: '#4d504a',
           'mid-100': '#4d504a',
         },
+        orange: {
+          baby: '#fabdaa',
+          light: '#f5d371',
+        },
+        blue: {
+          baby: '#9edef9',
+        },
       },
       fontFamily: {
         'Nanum-Myeongjo': 'Nanum Myeongjo',

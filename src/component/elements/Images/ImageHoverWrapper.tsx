@@ -12,7 +12,15 @@ const ImageHoverWrapper: React.FC<{
   const [isTextHoverd, setIsTextHoverd] = useState<boolean>(false);
 
   return (
-    <div className="flex w-full flex-col items-center gap-5">
+    <div
+      onMouseEnter={() => {
+        setIsTextHoverd(true);
+      }}
+      onMouseLeave={() => {
+        setIsTextHoverd(false);
+      }}
+      className="flex w-full flex-col items-center gap-5"
+    >
       <div
         style={{
           backgroundImage: `url(${props.image})`,
@@ -33,12 +41,6 @@ const ImageHoverWrapper: React.FC<{
       ></div>
       <div
         className={`w-full translate-y-0 opacity-100 transition-all duration-700 ease-linear`}
-        onMouseEnter={() => {
-          setIsTextHoverd(true);
-        }}
-        onMouseLeave={() => {
-          setIsTextHoverd(false);
-        }}
       >
         {!isTextHoverd ? (
           <motion.div
@@ -59,10 +61,10 @@ const ImageHoverWrapper: React.FC<{
             transition={{ duration: 0.6, ease: 'easeInOut' }}
             className="flex w-full justify-center gap-[30px]"
           >
-            <p className="font-Nanum-Myeongjo capitalize text-gray-mid-100">
-              see all
+            <p className="cursor-pointer font-Nanum-Myeongjo capitalize text-gray-mid-100">
+              Contact us
             </p>
-            <p className="font-Nanum-Myeongjo capitalize text-gray-mid-100">
+            <p className="cursor-pointer font-Nanum-Myeongjo capitalize text-gray-mid-100">
               view album
             </p>
           </motion.div>

@@ -2,7 +2,12 @@
 @tailwind base;
 
 .theme-layout-container{
-  @apply h-[4200px] w-full bg-gray-light p-[30px] flex flex-col items-center
+  @apply h-auto min-h-[8000px] w-full bg-gray-light p-[30px] flex flex-col items-center
+}
+
+/*text*/
+.large-header{
+  @apply font-Nanum-Myeongjo text-[52px] font-bold tracking-widest text-gray-mid
 }
 
 

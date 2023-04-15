@@ -1,6 +1,7 @@
 import { Meta } from '@/component/layouts/Meta';
 import ThemeLayout from '@/component/layouts/ThemeLayout';
 import OurWork from '@/component/sections/OurWork';
+import TemplateAbout from '@/component/sections/TemplateAbout';
 import { Main } from '@/component/templates/Main';
 
 const Index = () => {
@@ -15,6 +16,7 @@ const Index = () => {
     >
       <ThemeLayout>
         <OurWork />
+        <TemplateAbout />
       </ThemeLayout>
     </Main>
   );
