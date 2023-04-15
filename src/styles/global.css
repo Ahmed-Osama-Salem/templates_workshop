@@ -9,6 +9,9 @@
 .large-header{
   @apply font-Nanum-Myeongjo text-[52px] font-bold tracking-widest text-gray-mid
 }
+.mid-header{
+  @apply font-Nanum-Myeongjo text-[40px] font-bold  text-gray-mid
+}
 
 
 @tailwind components;
