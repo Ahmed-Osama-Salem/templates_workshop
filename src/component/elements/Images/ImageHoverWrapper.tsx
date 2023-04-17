@@ -61,10 +61,10 @@ const ImageHoverWrapper: React.FC<{
             transition={{ duration: 0.6, ease: 'easeInOut' }}
             className="flex w-full justify-center gap-[30px]"
           >
-            <p className="cursor-pointer font-Nanum-Myeongjo capitalize text-gray-mid-100">
+            <p className="hover-underline-animation cursor-pointer font-Nanum-Myeongjo capitalize text-gray-mid-100 ">
               Contact us
             </p>
-            <p className="cursor-pointer font-Nanum-Myeongjo capitalize text-gray-mid-100">
+            <p className="hover-underline-animation cursor-pointer font-Nanum-Myeongjo capitalize text-gray-mid-100">
               view album
             </p>
           </motion.div>
