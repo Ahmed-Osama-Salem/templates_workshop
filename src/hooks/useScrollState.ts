@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
-const useScrollState = (valueY: number) => {
+const useScrollState = (minValueY: number, maxValueY: number) => {
   const [isScroll, setIsScroll] = useState(false);
   const onScroll = () => {
     // eslint-disable-next-line no-restricted-globals
-    if (scrollY >= valueY) {
+    if (scrollY >= minValueY && scrollY <= maxValueY) {
       setIsScroll(true);
     } else {
       setIsScroll(false);
