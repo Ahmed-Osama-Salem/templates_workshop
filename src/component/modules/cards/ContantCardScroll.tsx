@@ -1,27 +1,45 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 
-const ContantCardScroll = () => {
-  const imageDivRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: imageDivRef,
-    offset: ['start end', 'end start'],
-  });
+import useFramerScroll from '@/hooks/useFramerScroll';
 
-  const rotate = useTransform(scrollYProgress, [0, 3], [0, 10]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+const ContantCardScroll = () => {
+  const imageDivRef = useRef(null);
+  // const { scrollYProgress } = useScroll({
+  //   target: imageDivRef,
+  //   offset: ['start end', 'end start'],
+  // });
+
+  // const rotate = useTransform(scrollYProgress, [0, 3], [0, 10]);
+  // const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+
+  const { rotate, y } = useFramerScroll(
+    imageDivRef,
+    [0, 3],
+    [-7, 30],
+    [0, 1],
+    [160, -160]
+  );
 
   return (
     <div className="flex justify-center gap-[60px] ">
       <motion.div
         ref={imageDivRef}
         style={{ rotate, y }}
-        className={`h-full scale-[1] cursor-pointer overflow-hidden rounded-lg bg-slate-300 transition-all duration-[400ms] ease-linear hover:scale-[0.94]`}
+        whileHover={{
+          scale: 0.96,
+          transition: { duration: 0.4, ease: 'easeInOut' },
+        }}
+        className={`h-full  cursor-pointer overflow-hidden rounded-lg bg-slate-300 `}
       >
-        <img
+        <motion.img
+          whileHover={{
+            scale: 1.1,
+            transition: { duration: 0.4, ease: 'easeInOut' },
+          }}
           src="https://assets.website-files.com/60df9bbc248f30e7b966b47e/60df9ccce80d803f7fa78b2f_main_1.jpg"
           alt="img"
-          className="w-[750px] scale-[1] rounded-lg transition-all duration-[400ms] ease-linear hover:scale-[1.2]"
+          className="w-[750px] scale-[1] rounded-lg "
         />
       </motion.div>
       <div className=" flex flex-col justify-center gap-[16px] p-[20px]">
