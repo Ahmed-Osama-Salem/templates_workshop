@@ -3,7 +3,10 @@ import { useRef } from 'react';
 
 import useFramerScroll from '@/hooks/useFramerScroll';
 
-const ContantCardScroll = () => {
+const ContantCardScroll = (props: {
+  image: string;
+  flexRow: 'row-reverse' | 'row';
+}) => {
   const imageDivRef = useRef(null);
   // const { scrollYProgress } = useScroll({
   //   target: imageDivRef,
@@ -22,7 +25,10 @@ const ContantCardScroll = () => {
   );
 
   return (
-    <div className="flex justify-center gap-[60px] ">
+    <div
+      style={{ flexDirection: `${props.flexRow}` }}
+      className="flex justify-center gap-[60px] "
+    >
       <motion.div
         ref={imageDivRef}
         style={{ rotate, y }}
@@ -37,7 +43,7 @@ const ContantCardScroll = () => {
             scale: 1.1,
             transition: { duration: 0.4, ease: 'easeInOut' },
           }}
-          src="https://assets.website-files.com/60df9bbc248f30e7b966b47e/60df9ccce80d803f7fa78b2f_main_1.jpg"
+          src={props.image}
           alt="img"
           className="w-[750px] scale-[1] rounded-lg "
         />
