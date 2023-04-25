@@ -16,12 +16,14 @@ const ContantCardScroll = (props: {
   // const rotate = useTransform(scrollYProgress, [0, 3], [0, 10]);
   // const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
-  const { rotate, y } = useFramerScroll(
+  const { rotate, y, opacity } = useFramerScroll(
     imageDivRef,
     [0, 3],
     [-7, 30],
     [0, 1],
-    [160, -160]
+    [160, -160],
+    [0, 0.5],
+    [0, 1]
   );
 
   return (
@@ -31,7 +33,7 @@ const ContantCardScroll = (props: {
     >
       <motion.div
         ref={imageDivRef}
-        style={{ rotate, y }}
+        style={{ rotate, y, opacity }}
         whileHover={{
           scale: 0.96,
           transition: { duration: 0.4, ease: 'easeInOut' },
